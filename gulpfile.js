@@ -6,7 +6,7 @@ const babel = require('gulp-babel')
 
 gulp.task('html', function () {
   gulp.src('src/index.html')
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('docs'));
 });
 // Javascript
 gulp.task('js', function () {
@@ -19,7 +19,7 @@ gulp.task('js', function () {
     .pipe(uglify().on("error", function (e) {
       console.log(e);
     }))
-    .pipe(gulp.dest('dist/js'));
+    .pipe(gulp.dest('docs/js'));
 })
 // Sass
 gulp.task('sass', function () {
@@ -28,7 +28,7 @@ gulp.task('sass', function () {
       outputStyle: 'compressed'
     }).on("error", sass.logError))
     .pipe(autoprefixer())
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('docs/css'));
 })
 
 gulp.task('default', ['html', 'js', 'sass']);
