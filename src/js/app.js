@@ -18,7 +18,7 @@ function loop(input) {
 }
 
 function initialCall() {
-  request.onreadystatechange = function() {
+  request.onreadystatechange = function () {
     if (request.readyState === 4 && request.status === 200) {
       var requestData = JSON.parse(request.response);
       console.log(requestData);
@@ -28,7 +28,7 @@ function initialCall() {
   };
   request.open(
     "GET",
-    `http://api.giphy.com/v1/gifs/trending?limit=40&api_key=${key}`,
+    `https://api.giphy.com/v1/gifs/trending?limit=40&api_key=${key}`,
     true
   );
   request.send();
