@@ -16,17 +16,22 @@ html,
   outline: none;
 }
 
-.main__box {
-  &:nth-child(3n + 1) {
-    border: 1px solid #0cf;
-  }
-  &:nth-child(3n + 2) {
-    border: 1px solid #f66;
-  }
-  &:nth-child(3n + 3) {
-    border: 1px solid #fff35c;
-  }
+.main {
   &__title {
-    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  &__box {
+    &:nth-child(3n + 1) {
+      border: 1px solid #0cf;
+    }
+    &:nth-child(3n + 2) {
+      border: 1px solid #f66;
+    }
+    &:nth-child(3n + 3) {
+      border: 1px solid #fff35c;
+    }
+    &__title {
+      margin-bottom: 20px;
+    }
   }
 }
