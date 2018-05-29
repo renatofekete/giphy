@@ -6,14 +6,14 @@ const title = document.querySelector(".main__title");
 
 // Display GIPHS
 function loop(input) {
-  for (var i = 0; i < input.data.length; i++) {
+  for (const item of input.data) {
     container.innerHTML += `
       <div class="main__box">
         <div class="main__box__title">
-          <h3>${input.data[i].title}</h3>
+          <h3>${item.title}</h3>
         </div>
         <div class="main__box__img">
-          <img src="${input.data[i].images.fixed_height.url}"/>
+          <img src="${item.images.fixed_height.url}"/>
         </div>
       </div>`;
   }
@@ -23,7 +23,6 @@ function initialCall() {
   request.onreadystatechange = function() {
     if (request.readyState === 4 && request.status === 200) {
       var requestData = JSON.parse(request.response);
-      console.log(requestData);
 
       loop(requestData);
     }
